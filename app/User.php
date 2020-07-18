@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Model\Answer;
+use App\Model\Like;
+use App\Model\Question;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,6 +21,18 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
+
+    public function questions(){
+        return $this->hasMany(Question::class);
+    }
+
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.
