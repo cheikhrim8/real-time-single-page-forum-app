@@ -10,11 +10,11 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Category[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
-        //
+        return Category::all();
     }
 
     /**

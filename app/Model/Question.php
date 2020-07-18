@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+    protected $table = 'questions';
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function category(){
         return $this->belongsTo(Category::class);
     }
