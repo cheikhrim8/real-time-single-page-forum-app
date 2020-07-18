@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 $factory->define(Category::class, function (Faker $faker) {
     $name = $faker->word;
     return [
-        'name ' => $name,
+        'name' => $name,
         'slug' => Str::slug($name)
     ];
 });
